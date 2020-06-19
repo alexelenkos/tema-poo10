@@ -24,7 +24,11 @@ class Dreptunghi (private val punct: Punct,
         return Dreptunghi(Punct(x+dx to y+dy, canvas), lungime, inaltime, canvas)
     }
 
-    override operator fun times(y: Pair<Int, Int>): Dreptunghi {
-        TODO("Not yet implemented")
+    override operator fun times(v: Pair<Int, Int>): Dreptunghi {
+        val x = punct.getCoordonate().first
+        val y = punct.getCoordonate().second
+        val dx = v.first
+        val dy = v.second
+        return Dreptunghi(Punct(x*dx to y*dy, canvas), lungime, inaltime, canvas)
     }
 }

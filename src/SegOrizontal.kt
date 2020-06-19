@@ -22,7 +22,12 @@ class SegOrizontal(private val ordonata: Int,
         return SegOrizontal(y+dy, x1+dx to x2+dx, canvas)
     }
 
-    override operator fun times(y: Pair<Int, Int>): SegOrizontal {
-        TODO("Not yet implemented")
+    override operator fun times(v: Pair<Int, Int>): SegOrizontal {
+        val x1 = abscise.first
+        val x2 = abscise.second
+        val y = ordonata
+        val dx = v.first
+        val dy = v.second
+        return SegOrizontal(y*dy, x1*dx to x2*dx, canvas)
     }
 }

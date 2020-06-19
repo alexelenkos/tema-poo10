@@ -19,8 +19,12 @@ class Punct(private val coordonate: Pair<Int, Int>,
         return Punct(x+dx to y+dy, canvas)
     }
 
-    override operator fun times(y: Pair<Int, Int>): Punct {
-        TODO("Not yet implemented")
+    override operator fun times(v: Pair<Int, Int>): Punct {
+        val x = coordonate.first
+        val y = coordonate.second
+        val dx = v.first
+        val dy = v.second
+        return Punct(x*dx to y*dy, canvas)
     }
 
     fun getCoordonate(): Pair<Int, Int> {

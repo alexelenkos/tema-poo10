@@ -22,7 +22,12 @@ class SegVertical (private val abscisa: Int,
         return SegVertical(x+dx, y1+dy to y2+dy, canvas)
     }
 
-    override operator fun times(y: Pair<Int, Int>): SegVertical {
-        TODO("Not yet implemented")
+    override operator fun times(v: Pair<Int, Int>): SegVertical {
+        val x = abscisa
+        val y1 = ordonate.first
+        val y2 = ordonate.second
+        val dx = v.first
+        val dy = v.second
+        return SegVertical(x*dx, y1*dy to y2*dy, canvas)
     }
 }
